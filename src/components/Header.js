@@ -20,7 +20,7 @@ const Header = () => {
     },
     {
       id: 4,
-      title: "Experience",
+      title: "Skills",
     },
     {
       id: 5,
@@ -32,7 +32,7 @@ const Header = () => {
   };
   return (
     <>
-      <div className="flex bg-gradient-to-r from-zinc-900 to-slate-800 text-white items-center h-20 px-5 justify-between fixed w-[100vw]">
+      <div className="flex bg-gradient-to-r from-zinc-900 to-slate-800 text-white items-center h-20 px-8 justify-between fixed w-[100vw]">
         <h1 className="text-5xl font-yashName">Yash.</h1>
         <ul className="md:flex gap-6 hidden">
           {navLinks.map(({ title, id }) => (
