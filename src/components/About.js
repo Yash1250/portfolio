@@ -4,11 +4,15 @@ import React from "react";
 
 const About = () => {
   return (
-    <div className="bg-gradient-to-b from-black  to-gray-800 w-full h-screen text-white">
+    <div
+      name="about"
+      className="bg-gradient-to-b from-gray-800  to-black w-full h-screen text-white">
       <div className="max-w-screen-lg mx-auto flex flex-col justify-center p-4 w-full h-full">
-        <h2 className="text-4xl font-bold border-b-4 border-gray-500 mb-10 w-[6.5rem]">
-          About
-        </h2>
+        <div className="pb-8">
+          <h2 className="text-4xl font-bold border-b-4 border-gray-500 p-2 inline">
+            About
+          </h2>
+        </div>
         <p className="text-xl">
           I am a motivated and enthusiastic front end web developer with a solid
           foundation in ReactJS, JavaScript, CSS, HTML, Tailwind CSS and Redux
