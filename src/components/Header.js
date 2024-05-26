@@ -32,21 +32,33 @@ const Header = () => {
       title: "Contact",
       link: "contact",
     },
+    {
+      id: 6,
+      title: "Resume",
+      link: "/resume.pdf",
+      download: true,
+    },
   ];
   const navHandler = () => {
     setIsNavOpen(!isNavOpen);
   };
   return (
-    <div className="flex bg-gradient-to-r from-zinc-900 to-slate-800 text-white items-center h-20 px-8 justify-between fixed w-[100vw]">
+    <div className="flex bg-gradient-to-r from-zinc-900 to-slate-800 text-white items-center h-20 px-8 justify-between fixed w-[100vw] z-10">
       <h1 className="text-5xl font-yashName">Yash.</h1>
       <ul className="md:flex gap-6 hidden">
-        {navLinks.map(({ title, id, link }) => (
+        {navLinks.map(({ title, id, link, download }) => (
           <li
             key={id}
             className="text-gray-500 text-xl font-medium cursor-pointer hover:text-white hover:scale-110 duration-200">
-            <Link to={link} smooth={true} duration={500}>
-              {title}
-            </Link>
+            {download ? (
+              <a href={link} download={download}>
+                {title}
+              </a>
+            ) : (
+              <Link to={link} smooth={true} duration={500}>
+                {title}
+              </Link>
+            )}
           </li>
         ))}
       </ul>
@@ -60,17 +72,23 @@ const Header = () => {
       {isNavOpen && (
         <div className="absolute w-full h-screen bg-gradient-to-b from-zinc-900 to-slate-800 top-0 left-0 flex flex-col items-center justify-center">
           <ul className="flex flex-col gap-6 text-center">
-            {navLinks.map(({ title, id, link }) => (
+            {navLinks.map(({ title, id, link, download }) => (
               <li
                 key={id}
                 className="text-gray-500 text-4xl font-medium cursor-pointer hover:text-white hover:scale-110 duration-200">
-                <Link
-                  to={link}
-                  smooth={true}
-                  duration={500}
-                  onClick={navHandler}>
-                  {title}
-                </Link>
+                {download ? (
+                  <a href={link} download={download}>
+                    {title}
+                  </a>
+                ) : (
+                  <Link
+                    to={link}
+                    smooth={true}
+                    duration={500}
+                    onClick={navHandler}>
+                    {title}
+                  </Link>
+                )}
               </li>
             ))}
           </ul>
